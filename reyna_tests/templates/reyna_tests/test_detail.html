@@ -1,0 +1,26 @@
+{% extends "reyna_tests/base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+<form action="{% url 'reyna_tests:submit' test_pk %}" method="post">
+  {% csrf_token %}
+  <label for="name_field">Please enter your name:</label>
+  <input id="name_field" type="text" name="name"><br>
+  {% for question in question_list %}
+  <div>
+    <h3>{{ question.text }}</h3>
+    {% for choice in question.choices %}
+    <input id="{{ choice.pk }}-field" type="radio" name="question_{{ question.pk }}" value="{{ choice.pk }}">
+    <label for="{{ choice.pk }}-field">{{ choice.text }}</label>
+    <br>
+    {% endfor %}
+  </div>
+  {% endfor %}
+  <hr>
+  <input type="submit" value="submit">
+  <input type="hidden" name="test_pk" value="{{ test_pk }}">
+  <input type="hidden" name="start" value="{{ start }}">
+  <input type="hidden" name="continues" value="{{ continues }}">
+</form>
+{% endblock %}
+{# vim: set ft=htmldjango ts=2 sw=2 et : #}

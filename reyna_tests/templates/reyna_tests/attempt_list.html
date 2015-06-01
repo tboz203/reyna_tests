@@ -1,0 +1,10 @@
+{% extends "reyna_tests/base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+<h3>Test Results!</h3>
+{% for attempt in object_list %}
+<a href="{% url 'reyna_tests:attempt_detail' attempt.pk %}">{{ attempt.user }} - {{ attempt.test }}</a><br>
+{% endfor %}
+{% endblock %}
+{# vim: set ft=htmldjango ts=2 sw=2 et : #}

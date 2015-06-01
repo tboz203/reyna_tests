@@ -1,0 +1,18 @@
+okay. a website for tests.
+
+so far we've got:
+- models for question and choice
+- urls, views, and templates for:
+  - an index page
+  - and a question list page
+- a super simple "base" template that the index and question-list pages pull
+  from.
+
+the question/choice model we've got right now is going to need to be expanded.
+i'm also looking at how to use the django-auth module. i think the final step
+is going to be learning to make the website look pretty (b/c right now it's
+super boring!)
+
+we need to figure out (well really, lots of stuff, but for now) how to use
+forms, how to use the users and auth stuff, and what views we're going to
+have.

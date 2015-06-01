@@ -20,5 +20,5 @@ import reyna_tests.urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'', include(reyna_tests.urls)),
+    url(r'', include(reyna_tests.urls, namespace="reyna_tests")),
 ]

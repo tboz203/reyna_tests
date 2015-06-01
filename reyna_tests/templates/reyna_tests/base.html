@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <title>{% block title %}Reyna Testing Website!{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="{% static "reyna_tests/css/bootstrap.css" %}" />
+  {% block extrastyle %}{% endblock %}
+</head>
+<body>
+  <div class='container'>
+    {% block header %}<h1>Reyna Testing Website!</h1>{% endblock %}
+    {% block main %}
+    {% endblock %}
+    {% block footer %}
+    <hr>
+    <div class='well well-sm'>
+      <a href="{% url "reyna_tests:index" %}">Home</a><br>
+      {# <a href="{% url "reyna_tests:login" %}">Log In</a><br> #}
+      {# <a href="{% url "reyna_tests:logout" %}">Log Out</a><br> #}
+    </div>
+    {% endblock %}
+  </div>
+</body>
+</html>
+{# vim: set ft=htmldjango ts=2 sw=2 et : #}

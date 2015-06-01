@@ -1,14 +1,16 @@
-<h1>Reyna Testing Website!</h1>
-<form>
-  {% for question in question_list %}
-    <div>
-      <h3>{{ question.question_text }}</h3>
-      {% for choice in question.choices %}
-      <label for="choice_{{ choice.pk }}">{{ choice.choice_text }}</label>
-      <input id="choice_{{ choice.pk }}" type="radio" name="question_{{ question.pk }}" value="{{ choice.choice_text }}">
-      {% endfor %}
-    </div>
+{% extends "reyna_tests/base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+<p>Welcome to the Reyna testing website!</p>
+<p>(still very much under construction!)</p>
+<hr>
+<h3>Check out these tests!</h3>
+<div class='well well-sm'>
+  <a href="{% url 'reyna_tests:attempt_list' %}">See Test Results</a><hr>
+  {% for test in test_list %}
+  <a href="{% url 'reyna_tests:test_detail' test.id %}">{{ test.name }}</a><br>
   {% endfor %}
-  <input type="submit" value="submit">
-</form>
+</div>
+{% endblock %}
 {# vim: set ft=htmldjango ts=2 sw=2 et : #}

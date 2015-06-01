@@ -1,0 +1,17 @@
+{% extends "reyna_tests/base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+user: {{ object.user }} <br>
+test: {{ object.test }} <br>
+date: {{ object.date }} <br>
+score: {{ object.score }} <br>
+answers: <br>
+<table class='table'>
+  {% for choice in object.choices.all %}
+  <tr><td>{{choice.question.text}}</td><td>{{ choice.text }}</td><td>{{ choice.is_correct }}</td></tr>
+  {% endfor %}
+</table>
+<a href="{% url 'reyna_tests:attempt_list' %}">Return to list</a>
+{% endblock %}
+{# vim: set ft=htmldjango ts=2 sw=2 et : #}
