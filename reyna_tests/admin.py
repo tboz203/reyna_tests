@@ -28,7 +28,9 @@ class AttemptAdmin(admin.ModelAdmin):
     list_filter = ['test', 'user', 'score']
 
 
+# needs to be fleshed out
 admin.site.register(Test)
 admin.site.register(Choice, ChoiceAdmin)
 admin.site.register(Question, QuestionAdmin)
+# could also probably be improved
 admin.site.register(Attempt, AttemptAdmin)

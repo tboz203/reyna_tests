@@ -2,7 +2,16 @@
 {% load staticfiles %}
 
 {% block main %}
-<form action="{% url 'reyna_tests:submit' test_pk %}" method="post">
+
+{% if error %}
+<h3 class='btn btn-danger'>
+  {% if error == "name" %}Please enter your name
+  {% else %}There has been an error...
+  {% endif %}
+</h3><br><br>
+{% endif %}
+
+<form action="{% url 'reyna_tests:test_detail' test_pk start %}" method="post">
   {% csrf_token %}
   <label for="name_field">Please enter your name:</label>
   <input id="name_field" type="text" name="name"><br>

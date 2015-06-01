@@ -4,8 +4,8 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^test/(?P<test_pk>[^/]+)/$', views.test_detail, name='test_detail'),
-    url(r'^test/(?P<test_pk>[^/]+)/(?P<start>\d+)/$', views.test_detail, name='test_detail'),
+    # url(r'^test/(?P<test_pk>[^/]+)/((?P<start>\d+)/)?$', views.test_detail, name='test_detail'),
+    url(r'^test/([^/]+)/(\d+)/?$', views.TestView.as_view(), name='test_detail'),
     url(r'^login/$', views.login, name='login'),
     url(r'^logout/$', views.logout, name='logout'),
     url(r'^post_submission/$', views.post_submission, name='post_submission'),

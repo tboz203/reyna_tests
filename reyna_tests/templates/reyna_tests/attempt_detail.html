@@ -12,6 +12,9 @@ answers: <br>
   <tr><td>{{choice.question.text}}</td><td>{{ choice.text }}</td><td>{{ choice.is_correct }}</td></tr>
   {% endfor %}
 </table>
+{% endblock %}
+{% block footer-content %}
+{{ block.super }}
 <a href="{% url 'reyna_tests:attempt_list' %}">Return to list</a>
 {% endblock %}
 {# vim: set ft=htmldjango ts=2 sw=2 et : #}

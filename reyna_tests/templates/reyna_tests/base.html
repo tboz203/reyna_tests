@@ -13,9 +13,11 @@
     {% block footer %}
     <hr>
     <div class='well well-sm'>
+      {% block footer-content %}
       <a href="{% url "reyna_tests:index" %}">Home</a><br>
       {# <a href="{% url "reyna_tests:login" %}">Log In</a><br> #}
       {# <a href="{% url "reyna_tests:logout" %}">Log Out</a><br> #}
+      {% endblock %}
     </div>
     {% endblock %}
   </div>

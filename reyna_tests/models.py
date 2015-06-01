@@ -24,6 +24,7 @@ class Question(models.Model):
     '''
     A question on a test.
     '''
+    # consider adding an order field?
     text = models.CharField(max_length=200)
     test = models.ForeignKey(Test)
 

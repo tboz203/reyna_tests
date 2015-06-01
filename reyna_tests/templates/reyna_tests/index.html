@@ -7,10 +7,13 @@
 <hr>
 <h3>Check out these tests!</h3>
 <div class='well well-sm'>
-  <a href="{% url 'reyna_tests:attempt_list' %}">See Test Results</a><hr>
   {% for test in test_list %}
-  <a href="{% url 'reyna_tests:test_detail' test.id %}">{{ test.name }}</a><br>
+  <a href="{% url 'reyna_tests:test_detail' test.id 0 %}">{{ test.name }}</a><br>
   {% endfor %}
 </div>
+{% endblock %}
+{% block footer-content %}
+{{ block.super }}
+<a href="{% url 'reyna_tests:attempt_list' %}">See Test Results</a>
 {% endblock %}
 {# vim: set ft=htmldjango ts=2 sw=2 et : #}

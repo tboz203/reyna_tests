@@ -2,9 +2,15 @@
 {% load staticfiles %}
 
 {% block main %}
+{% if object_list %}
 <h3>Test Results!</h3>
+<table class='table'>
 {% for attempt in object_list %}
-<a href="{% url 'reyna_tests:attempt_detail' attempt.pk %}">{{ attempt.user }} - {{ attempt.test }}</a><br>
+<tr><td><a href="{% url 'reyna_tests:attempt_detail' attempt.pk %}">{{ attempt.user }}</a></td><td>{{ attempt.test }}</td></tr>
 {% endfor %}
+</table>
+{% else %}
+<h3>No test results here...</h3>
+{% endif %}
 {% endblock %}
 {# vim: set ft=htmldjango ts=2 sw=2 et : #}

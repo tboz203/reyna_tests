@@ -16,3 +16,13 @@ super boring!)
 we need to figure out (well really, lots of stuff, but for now) how to use
 forms, how to use the users and auth stuff, and what views we're going to
 have.
+
+---
+
+models now include:
+- question
+- choice
+- test
+- attempt
+
+
